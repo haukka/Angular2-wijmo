@@ -1,0 +1,35 @@
+<div class="mdl-layout mdl-js-layout mdl-color--grey-200">
+
+	<header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+		<div class="wrapper mdl-grid">
+			<div class="mdl-cell mdl-cell--12-col mdl-cell--3-col-tablet mdl-cell--3-col-phone">
+				<a [routerLink]="['/']"><img src="resources/wijmo.png" class="wijmo-logo" width="63" height="80" alt="Wijmo" /></a>
+				<h1><a [routerLink]="['/']">Angular 2 Starter Project by Wijmo</a></h1>
+			</div>
+		</div>
+	</header>
+  
+	<main class="main mdl-layout__content" style="margin-top:50px;">
+		<div class="wrapper mdl-grid mdl-grid--no-spacing">
+			<div class="navigation mdl-color--white mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+				<a class="mdl-button mdl-js-button mdl-js-ripple-effect" [routerLink]="['/']">Introduction</a>
+				<a class="mdl-button mdl-js-button mdl-js-ripple-effect" [routerLink]="['/about']">Grid</a>
+			</div>
+			<div class="content mdl-color--white mdl-color-text--grey-800 mdl-cell mdl-cell--9-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+				<router-outlet></router-outlet>
+			</div>
+		</div>
+		<footer class="mdl-mini-footer mdl-color--grey-200">
+			<div class="wrapper mdl-grid">
+				<div class="mdl-cell mdl-cell--12-col">
+					<p>
+						Built using the Angular 2 Starter Project by <a href="http://wijmo.com/angular2/" target="_blank">Wijmo</a><br />
+						&copy;2016 GrapeCity, Inc. 
+					</p>
+
+				</div>
+			</div>
+		</footer>
+	</main>
+
+</div>

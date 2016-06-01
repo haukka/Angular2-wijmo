@@ -1,0 +1,48 @@
+<!-- product sales -->
+	<h2>Sales Dashboard</h2>
+	<h3>Product Sales (Gauge)</h3>
+
+	<table>
+		<thead>
+			<tr>
+				<th> </th>
+				<th>
+					Current <span style="background-color:#0085c7">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					&nbsp;&nbsp;
+					Target <span style="background-color:black">&nbsp;</span>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="#item of productSales">
+				<td style="white-space:pre">{{item.name}} ({{item.current}}{{item.units}} : {{item.target}}{{item.units}}) </td>
+				<td>
+					<span>
+						<wj-bullet-graph style="display:block"
+							[value]="item.current"
+							[min]="0" [max]="9"
+							[target]="item.target"
+							[bad]="item.target * .75"
+							[good]="item.target * 1.15">
+						</wj-bullet-graph>
+					</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>&nbsp;</p>
+
+	<h3>Product Sales (Chart)</h3>
+	<wj-flex-chart #chart
+		class="chart"
+		style="display:block;height:350px"
+		[chartType]="'Column'"
+		[itemsSource]="productSales"
+		[bindingX]="'name'"
+		[title]="'Product Sales'">
+		<wj-flex-chart-legend [position]="'Top'"></wj-flex-chart-legend>
+		<wj-flex-chart-series [name]="'current'" [binding]="'current'"></wj-flex-chart-series>
+		<wj-flex-chart-series [name]="'target'" [binding]="'target'"></wj-flex-chart-series>
+	</wj-flex-chart>
+            
+

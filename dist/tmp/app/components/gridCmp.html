@@ -1,0 +1,23 @@
+	<div>
+		<h2>Grid</h2>
+		<p>Display data in grid format:</p>
+		<wj-flex-grid #flex
+                  class="grid"
+                  [itemsSource]="data">
+			<wj-flex-grid-column [header]="'Id'" [binding]="'id'" [width]="'*'"></wj-flex-grid-column>
+			<wj-flex-grid-column [header]="'Country'" [binding]="'country'" [width]="'*'" [minWidth]="100"></wj-flex-grid-column>
+			<wj-flex-grid-column [header]="'Date'" [binding]="'date'" [width]="'*'">
+				<template wjFlexGridCellTemplate [cellType]="'CellEdit'" #cell="cell">
+					<wj-input-date [(value)]="cell.value"></wj-input-date>
+				</template>
+			</wj-flex-grid-column>
+			<wj-flex-grid-column [header]="'Amount'" [binding]="'amount'" format="c0" [width]="'*'">
+                <template wjFlexGridCellTemplate [cellType]="'Cell'" #cell="cell">
+                    <span [ngStyle]="{color: cell.item.amount > 3500 ? 'red' : 'green'}">
+                        {{cell.row.grid.getCellData(cell.row.index, cell.col.index, true)}}
+                    </span>
+                </template>
+            </wj-flex-grid-column>        
+			<wj-flex-grid-column [header]="'Active'" [binding]="'active'"  [width]="'*'"></wj-flex-grid-column>
+		</wj-flex-grid>
+	</div>

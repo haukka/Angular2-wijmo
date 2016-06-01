@@ -1,0 +1,123 @@
+<!-- product sales -->
+	<h2>Form</h2>
+	<div class="mdl-grid">
+
+    <!-- MDL components -->
+    <div class="mdl-cell mdl-cell--6-col">
+
+        <h3>MDL components</h3>
+
+        <!-- badges -->
+        <div class="ctlgroup">
+            <span class="mdl-badge" data-badge="4">Number Badge</span>
+            <span class="mdl-badge" data-badge="♥">Icon Badge</span>
+        </div>
+
+        <!-- buttons -->
+        <div class="ctlgroup">
+            <button class="mdl-button mdl-js-button">
+                Plain
+            </button>
+            <button class="mdl-button mdl-js-button mdl-button--raised">
+                Raised
+            </button>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                Colored
+            </button>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                Accent
+            </button>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Rippled
+            </button>
+        </div>
+        <div class="ctlgroup">
+            <button class="mdl-button mdl-js-button mdl-button--fab">
+                <i class="material-icons">email</i>
+            </button>
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <i class="material-icons">email</i>
+            </button>
+        </div>
+
+        <!-- toggles -->
+        <div class="ctlgroup">
+            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+                <input type="checkbox" class="mdl-switch__input">
+                <span class="mdl-switch__label">Switch</span>
+            </label>
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                <input type="checkbox" class="mdl-checkbox__input">
+                <span class="mdl-checkbox__label">Checkbox</span>
+            </label>
+        </div>
+
+        <!-- slider -->
+        <div class="ctlgroup">
+            <input class="mdl-slider mdl-js-slider" type="range"
+                   min="0" max="100" value="0" tabindex="0">
+        </div>
+
+        <!-- text fields -->
+        <div class="ctlgroup">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label sample">
+                <input class="mdl-textfield__input" type="text" value="abc">
+                <label class="mdl-textfield__label">Text...</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label sample">
+                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?">
+                <label class="mdl-textfield__label">Number...</label>
+                <span class="mdl-textfield__error">Input is not a number!</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wijmo controls -->
+    <div class="mdl-cell mdl-cell--6-col">
+
+        <h3>Wijmo Components</h3>
+
+      
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <wj-input-date></wj-input-date>
+                    <label class="mdl-textfield__label">The Date</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <wj-input-time></wj-input-time>
+                    <label class="mdl-textfield__label">The Time</label>
+                </div>
+                <br />
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <wj-input-number
+                                     [step]="10"
+                                     [format]="c" [value]="20.00"></wj-input-number>
+                    <label class="mdl-textfield__label">The Amount</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <wj-input-number [step]="10"
+                                     [format]="n0" [value]="60"></wj-input-number>
+                    <label class="mdl-textfield__label">Even Number</label>
+                    <span class="mdl-textfield__error">Input is not even!</span>
+                </div>
+
+                <wj-radial-gauge style="width:150px;height:100px;display:inline-block"
+                                 [has-shadow]="false"
+                                 [is-read-only]="false"
+                                 [thumb-size]="8">
+                    <wj-range [wj-property]="face" [thickness]="0.1"></wj-range>
+                    <wj-range [wj-property]="pointer" [thickness]="0.1"></wj-range>
+                </wj-radial-gauge>
+               
+                <br />
+                <wj-linear-gauge style="width:70%"
+                                 [has-shadow]="false"
+                                 [is-read-only]="false"
+                                 [thumb-size]="12">
+                    <wj-range [wj-property]="face" [thickness]="0.2"></wj-range>
+                    <wj-range [wj-property]="pointer" [thickness]="0.3"></wj-range>
+                </wj-linear-gauge>
+                
+
+    </div>
+</div>
+
